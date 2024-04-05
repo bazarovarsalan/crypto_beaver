@@ -15,12 +15,6 @@ export interface ICHooseBox {
   text: string;
 }
 
-export interface fetchCryptocurrencies {
-  data: ICurrency[] | null;
-  loading: boolean;
-  error: boolean;
-}
-
 export interface ICoin {
   name: string;
   current_price: number;
@@ -37,10 +31,4 @@ export interface ICoin {
     price_change_percentage_24h: number;
     current_price: { usd: number };
   };
-}
-
-export interface fetchCoin {
-  data: ICoin | null;
-  loading: boolean;
-  error: boolean;
 }

@@ -1,13 +1,13 @@
 import { useParams } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
-import { fetchCoin } from "../types/types";
+import { ICoin } from "../types/types";
 import DOMPurify from "dompurify";
 import Loading from "../components/loading/Loading";
 
 function Coin() {
   const { coinId } = useParams();
   const url = `https://api.coingecko.com/api/v3/coins/${coinId}`;
-  const { data, loading, error }: fetchCoin = useFetch(url);
+  const { data, loading, error } = useFetch<ICoin>(url);
 
   function numberWithCommas(x: string | number) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");

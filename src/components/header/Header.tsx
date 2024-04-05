@@ -1,10 +1,10 @@
 import "../../App.css";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Logo from "../../../public/logo__beaver.png";
 
 const Header = ({ headerMove }: { headerMove: boolean }) => {
   const [isToggleBurgerMenu, setToggleBurgerMenu] = useState(false);
-  console.log(isToggleBurgerMenu);
 
   const goTop = () => {
     window.scrollTo({
@@ -21,7 +21,7 @@ const Header = ({ headerMove }: { headerMove: boolean }) => {
             className={
               headerMove ? "header__logo-img hide" : "header__logo-img"
             }
-            src="/public/logo__beaver.png"
+            src={Logo}
             alt="logo"
           />
         </a>

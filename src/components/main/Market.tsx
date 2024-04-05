@@ -3,15 +3,15 @@ import "../../App.css";
 import Loading from "../loading/Loading";
 import useFetch from "../../hooks/useFetch";
 import { useNavigate } from "react-router";
-import { ICurrency, fetchCryptocurrencies } from "../../types/types";
+import { ICurrency } from "../../types/types";
 import { Link } from "react-router-dom";
 import ErrorComponent from "../ErrorComponent";
 
 function Market() {
   const [page, setPage] = useState<number>(1);
-  const url = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&pag=${page}&sparkline=false`;
+  const url = `api/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=${page}&sparkline=false`;
 
-  const { data, loading, error }: fetchCryptocurrencies = useFetch(url);
+  const { data, loading, error } = useFetch<ICurrency[]>(url);
   const navigate = useNavigate();
 
   const toPagination = (event: React.MouseEvent) => {

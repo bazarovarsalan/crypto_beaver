@@ -1,3 +1,11 @@
+import img_eth from "../../../public/ethereum.png";
+import img_litecoin from "../../../public/litecoin.png";
+import img_polygon from "../../../public/polygon.png";
+import img_usdc from "../../../public/usdc.png";
+import img_usdt from "../../../public/usdt.png";
+import img_shiba from "../../../public/shiba.png";
+import img_beaver from "../../../public/beaver.png";
+
 function Title() {
   return (
     <>
@@ -11,32 +19,16 @@ function Title() {
           </h2>
         </span>
         <div className="animation-container">
-          <img
-            className="img__eth"
-            src="../../../public/ethereum.png"
-            alt="img"
-          />
-          <img
-            className="img__litecoin"
-            src="../../../public/litecoin.png"
-            alt="img"
-          />
-          <img
-            className="img__polygon"
-            src="../../../public/polygon.png"
-            alt="img"
-          />
-          <img className="img__usdc" src="../../../public/usdc.png" alt="img" />
-          <img className="img__usdt" src="../../../public/usdt.png" alt="img" />
-          <img
-            className="img__shiba"
-            src="../../../public/shiba.png"
-            alt="img"
-          />
+          <img className="img__eth" src={img_eth} alt="img" />
+          <img className="img__litecoin" src={img_litecoin} alt="img" />
+          <img className="img__polygon" src={img_polygon} alt="img" />
+          <img className="img__usdc" src={img_usdc} alt="img" />
+          <img className="img__usdt" src={img_usdt} alt="img" />
+          <img className="img__shiba" src={img_shiba} alt="img" />
 
           <img
             className="animation__beaver"
-            src="../../../public/beaver.png"
+            src={img_beaver}
             alt="beaver_img"
           />
         </div>
