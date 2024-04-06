@@ -6,8 +6,10 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: "https://api.coingecko.com/api/v3/coins/",
+        target: "http://127.0.0.1:3000",
+        secure: false,
         changeOrigin: true,
+        ws: true,
         rewrite: (path) => path.replace(/^\/api/, ""),
       },
     },

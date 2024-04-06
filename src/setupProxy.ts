@@ -1,11 +1,14 @@
-const { createProxyMiddleware } = require("http-proxy-middleware");
+import * as express from "express";
+import { createProxyMiddleware } from "http-proxy-middleware";
 
-module.exports = function (app: any) {
-  app.use(
-    createProxyMiddleware("/api", {
-      target: "http://localhost:5000",
-      changeOrigin: true,
-      secure: false,
-    })
-  );
-};
+const app = express();
+
+app.use(
+  "/api",
+  createProxyMiddleware({
+    target: "https://api.coingecko.com/api/v3/coins/",
+    changeOrigin: true,
+  })
+);
+
+app.listen(3000);
