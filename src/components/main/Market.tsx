@@ -9,8 +9,11 @@ import ErrorComponent from "../ErrorComponent";
 
 function Market() {
   const [page, setPage] = useState<number>(1);
-  const url = `api/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=${page}&sparkline=false
+
+  const url = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=${page}&sparkline=false
   `;
+  // const url = `api/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=${page}&sparkline=false
+  // `;
 
   const { data, loading, error } = useFetch<ICurrency[]>(url);
   const navigate = useNavigate();
